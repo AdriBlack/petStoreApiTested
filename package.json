@@ -2,6 +2,7 @@
   "name": "petstoreapitested",
   "version": "1.0.0",
   "description": "Goal of this repo is to build a REST API with Jest testing",
+  "type": "module",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
