@@ -40,3 +40,18 @@ export const editItem = (id, item) => {
         console.log(' ModelError: editItem ', err)
     }
 }
+
+export const deleteItem = (id, item) => {
+    try {
+        const indexOfPet = db?.pets.findIndex(pet => pet.id === id)
+        if(indexOfPet === -1) {
+            throw new Error ('Pet not found')
+        } else {
+            db?.pets.splice(indexOfPet, 1)
+            return db.pets
+        }
+
+    } catch(error) {
+        console.log(' ModelError: deleteItem ', err)
+    }
+}

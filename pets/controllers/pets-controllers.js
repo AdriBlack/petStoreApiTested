@@ -1,4 +1,4 @@
-import { listItems, getItem, addItem, editItem } from '../models/pets-models.js'
+import { listItems, getItem, addItem, editItem, deleteItem } from '../models/pets-models.js'
 
 export const listPets = (req, res) => {
     try {
@@ -41,6 +41,16 @@ export const editPet = ( req, res) => {
 
     } catch(err) {
         console.log('editPet controller error', err)
+        res.status(500).send(err)
+    }
+}
+
+export const deletePet = (req, res) => {
+    try {
+        const response = deleteItem(parseInt(req.params.id))
+        res.status(200).json(response)
+    } catch (error) {
+        console.log('deletePet Controller Error', error)
         res.status(500).send(err)
     }
 }
