@@ -34,7 +34,7 @@ export const editItem = (id, item) => {
         if (indexOfUpdatedPet === -1) {
             throw new Error ('Pet not found')
         } else {
-            db.pets[indexOfUpdatedPet] = item
+           return db.pets[indexOfUpdatedPet] = item
         }
     } catch (err) {
         console.log(' ModelError: editItem ', err)
